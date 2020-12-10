@@ -1,0 +1,946 @@
+input#clk {
+border:2px groove #7c93ba;
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+padding: 1px 2px;
+/*give the background a gradient - see cssdemos.tupence.co.uk/gradients.htm for more info*/
+background-color:#6b6dbb; /*required for browsers that don't support gradients*/
+background: -webkit-gradient(linear, left top, left bottom, from(#88add7), to(#6b6dbb));
+background: -webkit-linear-gradient(top, #88add7, #6b6dbb);
+background: -moz-linear-gradient(top, #88add7, #6b6dbb);
+background: -o-linear-gradient(top, #88add7, #6b6dbb);
+background: linear-gradient(top, #88add7, #6b6dbb);
+/*style to the text inside the button*/
+font-family:Andika, Arial, sans-serif; /*Andkia is available at http://www.google.com/webfonts/specimen/Andika*/
+color:#fff;
+font-size:.9em;
+letter-spacing:.1em;
+font-variant:small-caps;
+/*give the corners a small curve*/
+-webkit-border-radius: 0 15px 15px 0;
+-moz-border-radius: 0 15px 15px 0;
+border-radius: 0 15px 15px 0;
+/*add a drop shadow to the button*/
+-webkit-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
+-moz-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
+box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+input#clk:hover, input#clk:focus {
+color:#edebda;
+/*reduce the spread of the shadow to give a pushed effect*/
+-webkit-box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
+-moz-box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
+box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
+}
+.hide {
+	display: none;
+}
+.frms
+{
+	margin:0 auto;
+	padding:10px;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#333;
+	font-size:.9em;
+	line-height:1.2em;
+}
+.frms input[type="text"]
+{
+	width:50%;
+	background:#fff;
+	border:#ddd 1px solid;
+	border-radius:.35em;
+	-moz-border-radius:.35em;
+	-webkit-border-radius:.35em;
+	-o-border-radius:.35em;
+	padding:0 .5%;
+	margin-top:5px;
+	margin-bottom:15px;
+	height:35px;
+}
+
+.frms input:hover,textarea:hover,select:hover
+{
+	box-shadow:#dae1e5 0px 0px 5px;
+	-moz-box-shadow:#dae1e5 0px 0px 5px;
+	-webkit-box-shadow:#dae1e5 0px 0px 5px;
+	-o-box-shadow:#dae1e5 0px 0px 5px;
+}
+.frms input:focus,textarea:focus,select:focus
+{
+	-webkit-box-shadow: inset 7px 4px 7px -7px rgba(0,0,0,0.42);
+-moz-box-shadow: inset 7px 4px 7px -7px rgba(0,0,0,0.42);
+box-shadow: inset 7px 4px 7px -7px rgba(0,0,0,0.42);
+	
+	border:#9d9983 1px solid;
+}
+.frms input[type="submit"]
+{
+	padding:7px 14px;
+	font-weight:bold;
+	color:#fff;
+	cursor:pointer;
+	border-radius:.3em;
+	-moz-border-radius:.2em;
+	-webkit-border-radius:.2em;
+	-o-border-radius:.2em;
+	margin:10px 0;
+	border:none;
+	background:#75ab22;
+	border-bottom:#629826 3px solid;
+	text-shadow:#396e12 1px 1px 0px;
+}
+.input_text_class
+{
+	width:99%;
+	background:#fff;
+	border:#ddd 1px solid;
+	border-radius:.35em;
+	-moz-border-radius:.35em;
+	-webkit-border-radius:.35em;
+	-o-border-radius:.35em;
+	padding:0 .5%;
+	margin-top:5px;
+	margin-bottom:15px;
+	height:35px;
+}
+
+
+.table
+{
+	margin:20px 1px;
+	padding:0px;
+	border:0px;
+	 border-spacing: 0;
+	 overflow: auto;
+	 width:100%;
+	 border-spacing: 0;
+}
+
+.table td, th
+{
+	border-spacing: 0;
+	border-collapse:collapse;
+	border:1px solid #e8e8e8;
+}
+.table tr:first-child td
+{
+	background: red; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f7f8f9 0%, #eaedf1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f8f9), color-stop(100%,#eaedf1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f7f8f9 0%,#eaedf1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f7f8f9 0%,#eaedf1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f7f8f9 0%,#eaedf1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f7f8f9 0%,#eaedf1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f8f9', endColorstr='#eaedf1',GradientType=0 ); /* IE6-9 */
+	font:bold 1em/26px Tahoma, Geneva, sans-serif;
+	color:#333;
+	text-shadow:#fff 1px 1px 0px;
+}
+.table th
+{
+	background: #f7f8f9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f7f8f9 0%, #eaedf1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f8f9), color-stop(100%,#eaedf1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f7f8f9 0%,#eaedf1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f7f8f9 0%,#eaedf1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f7f8f9 0%,#eaedf1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f7f8f9 0%,#eaedf1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f8f9', endColorstr='#eaedf1',GradientType=0 ); /* IE6-9 */
+	font:bold 1em/26px Tahoma, Geneva, sans-serif;
+	color:#333;
+	text-shadow:#fff 1px 1px 0px;
+}
+.table td, th
+{
+	padding:2px 2px 2px 12px;
+	-moz-box-shadow:    inset 0 0 1px #fff;
+	-o-box-shadow:    inset 0 0 1px #fff;
+   -webkit-box-shadow: inset 0 0 1px #fff;
+   box-shadow:         inset 0 0 1px #fff;
+   
+}
+.table td
+{
+	font:normal 1em/26px Tahoma, Geneva, sans-serif;
+	color:#666;
+	text-shadow:#fff 1px 1px 0px;
+	vertical-align:middle;
+	padding:2px 2px 2px 12px;
+	
+}
+.table tr:nth-child(even)
+{
+	background: #fcfcfc; /* Old browsers */
+}
+.table tr:nth-child(odd)
+{
+	background: #f9f9f9; /* Old browsers */
+}
+.resp_code
+{
+margin:5px 10px 10px 300px;
+padding:10px 20px 10px 20px;
+font:normal 1em/1.3em Tahoma, Geneva, sans-serif;
+color:#333;
+background:#f8f8f8;
+border:#ddd 1px solid;
+border-radius:.25em;
+overflow:auto;width:50%;
+}
+@media screen and (max-width: 480px)
+{
+.resp_code{width:auto !important;margin:0px !important;}
+}
+#submit {
+    text-align: center;
+    
+    font-family: Gotham-Book;
+    font-weight: bold;
+    color: #FFF;
+    background-color: rgba(69, 64, 64, 0.37);
+}
+/*-- Fonts --*/
+
+@font-face{
+  font-family: 'Oswald-Bold';
+  src:url(../fonts/Oswald-Bold.ttf) format('truetype');
+}
+@font-face{
+	font-family: 'Oswald-Regular';
+	src:url(../fonts/Oswald-Regular.ttf) format('truetype');
+}
+@font-face{
+  font-family: 'Gotham-Book';
+  src:url(../fonts/Gotham-Book.ttf) format('truetype');
+}
+
+.clear {
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Oswald-Bold';
+  color: #FFF;
+  font-size: 40px;
+  margin: 40px auto;
+}
+
+p {
+  text-align: center;
+  font-family: 'Oswald-Bold';
+  color: #FFF;
+  font-size: 15px;
+  margin: 40px auto;
+}
+a:link {
+    color: white;
+}
+.content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.place {
+  background: url("../images/framebg.jpg");
+  min-height: 500px;
+  background-size: 100% 100%;
+ 
+}
+
+div#txt {
+    padding: 40px 10px;
+    text-align: center;
+    font-family: Gotham-Book;
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.47);
+    margin: 45px 0 30px;
+}
+
+.dmy {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Gotham-Book;
+    font-weight: bold;
+    color: #FFF;
+    background-color: rgba(69, 64, 64, 0.37);
+}
+
+.city p {
+    padding: 40px 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Oswald-Regular;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 20px;
+}
+
+.temp {
+    width: 49%;
+    float: left;
+    background: rgba(69, 64, 64, 0.37);
+    min-height: 500px;
+}
+
+.temp p {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 75px;
+    font-family: Gotham-Book;
+    color: #FFFFFF;
+}
+
+.day {
+	width: 100%;
+	margin-top: -30px;
+	text-align: center;
+}
+.day h3 {
+    margin-top: 100px;
+    font-family: Gotham-Book;
+    color: #FFFFFF;
+    font-size: 35px;
+}
+.day p {
+    padding: 10px;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 10px;
+    font-family: Gotham-Book;
+    color: #FFFFFF;
+    line-height: 30px;
+}
+
+.sat {
+	float: left;
+	width: 33%;
+	background: url("../images/sunny.png") no-repeat 25px 0px;
+}
+.sund {
+	float: left;
+	width: 33%;
+	background: url("../images/cloudy.png") no-repeat 25px 0px;
+}
+.mon {
+	float: left;
+	width: 33%;
+	background: url("../images/rainy.png") no-repeat 25px 0px;
+}
+
+/*-- Navbar - Styling --*/
+
+
+div#dd1 span {
+    z-index: 9999999;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+img {
+    width: 150%;
+}
+.dr1{
+    position: relative;
+  outline: none;
+  float:left;
+  cursor: pointer;
+  min-height:60px;
+}
+.wrapper-dropdown-2,.wrapper-dropdown-3 {
+    position: relative;
+  outline: none;
+  float:left;
+   width: 15%;
+   min-height:60px;
+     cursor: pointer;
+}
+.wrapper-dropdown-1 .dropdown ,.wrapper-dropdown-3 .dropdown,.wrapper-dropdown-4 .dropdown{
+    width: 150px;
+    top: 35px;
+    position: absolute;
+    left: 20px;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    list-style: none;
+    z-index: 1;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+    -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+    -o-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+    max-height: 0;
+    overflow: hidden;
+    z-index: 99999;
+    padding-left: 0px;
+    font-family: Gotham-Book;
+}
+.wrapper-dropdown-2 .dropdown ,.wrapper-dropdown-4 .dropdown{
+  /* Size & position */
+    position: absolute;
+    width:171px;
+    right: 0px;
+    /* Styles */
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    list-style: none;
+    z-index:1;
+    background-color: #FFF;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+  -o-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.47);
+    top: 62px;
+    /* Hiding */
+    max-height: 0;
+    overflow: hidden;
+}
+.wrapper-dropdown .dropdown li {
+    position: relative; /* Enable absolute positioning for checkboxes */
+}
+.wrapper-dropdown-1 .dropdown li,.wrapper-dropdown-2 .dropdown li,.wrapper-dropdown-3 .dropdown li,.wrapper-dropdown-4 .dropdown li{
+  border-bottom: 1px solid #F0F0F0;
+  float: none;
+  margin: 0;
+    width: 100%;
+}
+.wrapper-dropdown-1 .dropdown li,.wrapper-dropdown-3 .dropdown li,.wrapper-dropdown-4 .dropdown li{
+  padding:8px;
+}
+.wrapper-dropdown-1 .dropdown li:hover,.wrapper-dropdown-3 .dropdown li:hover ,.wrapper-dropdown-4 .dropdown li:hover {
+  background:#FDFDFD;
+}
+.odd{
+}
+.wrapper-dropdown-1 .dropdown li:last-child,.wrapper-dropdown-3 .dropdown li:last-child,.wrapper-dropdown-2 .dropdown li:last-child,.wrapper-dropdown-4 .dropdown li:last-child{
+  border-bottom:none;
+}
+.wrapper-dropdown-1 .dropdown li a,.wrapper-dropdown-2 .dropdown li a,.wrapper-dropdown-3 .dropdown li a ,.wrapper-dropdown-4 .dropdown li a {
+    display: block;
+  text-decoration: none;
+  color:#777;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  border-radius: 0;
+    border: none;
+     text-align: left;
+    padding-left: 1em;
+}
+/* Active state */
+.wrapper-dropdown-1.active:after,.wrapper-dropdown-2.active:after,.wrapper-dropdown-3.active:after,.wrapper-dropdown-4.active:after{
+    border-width: 0 6px 6px 6px;
+}
+.wrapper-dropdown-1.active .dropdown,.wrapper-dropdown-2.active .dropdown,.wrapper-dropdown-3.active .dropdown ,.wrapper-dropdown-4.active .dropdown {
+   max-height: 400px;
+}
+.wrapper-dropdown-2 .dropdown li a ,.wrapper-dropdown-4 .dropdown li a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  text-transform: capitalize;
+  font-size: 1em;
+  font-weight: 100;
+}
+
+
+/*-- Navbar - Styling --*/
+
+.footer {
+    text-align: center;
+    margin-top: 100px;
+}
+.footer p {
+    font-family: Oswald-Regular;
+    color: #000;
+}
+.footer a {
+    font-family: Oswald-Regular;
+    color: #000;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/*-- Index - Page - Styling --*/
+
+/*-- Responsive - Code --*/
+
+@media screen and (max-width: 1920px) {
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 75px;
+	}
+	img {
+    	width: 100%;
+	}
+	.wrapper-dropdown-1 .dropdown, .wrapper-dropdown-3 .dropdown, .wrapper-dropdown-4 .dropdown {
+    	width: 150px;
+    	top: 40px;
+    }
+    .day p {
+	    font-size: 25px;
+	    line-height: 40px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 47px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 47px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 45px 0px;
+	}
+}
+
+@media screen and (max-width: 1680px) {
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 35px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 37px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 37px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 35px 0px;
+	}
+}
+
+@media screen and (max-width: 1600px) {
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 34px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 34px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 32px 0px;
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	.content {
+		width: 60%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 55px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 40px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 40px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 38px 0px;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 40px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 35px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 35px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 33px 0px;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.content {
+		width: 70%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 60px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 41px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 41px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 39px 0px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.content {
+		width: 65%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 35px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 33px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 33px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 31px 0px;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.content {
+		width: 70%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 20px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 30px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 30px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 28px 0px;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.content {
+		width: 70%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 20px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 26px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 26px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 24px 0px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.content {
+		width: 80%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 40px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 33px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 33px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 31px 0px;
+	}
+}
+
+@media screen and (max-width: 966px) {
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 25px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 31px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 31px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 29px 0px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.content {
+		width: 85%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 25px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 33px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 33px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 31px 0px;
+	}
+}
+
+@media screen and (max-width: 853px) {
+	.content {
+		width: 94%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.content {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.content {
+		width: 95%;
+	}
+	.city p {
+	    background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 25px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 28px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 28px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 26px 0px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.content {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 667px) {
+	div#txt {
+		padding: 40px 10px;
+		font-size: 45px;
+	}
+	.dmy {
+		font-size: 25px;
+	}
+	.city p {
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 10px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 22px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 22px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 20px 0px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.city p {
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 3px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 20px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 20px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 18px 0px;
+	}
+}
+
+@media screen and (max-width: 603px) {
+	.content {
+		width: 100%;
+	}
+	div#txt {
+		padding: 30px 10px;
+		font-size: 40px;
+		margin: 80px 0 30px;
+	}
+	.dmy {
+		font-size: 25px;
+	}
+	.city p {
+		font-size: 25px;
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 10px;
+	}
+	.temp p {
+		margin-top: 94px;
+		font-size: 70px;
+	}
+	.day h3 {
+		font-size: 33px;
+	}
+	.day p {
+		font-size: 24px;
+		line-height: 37px;
+		margin-top: 0px;
+	}
+	.city p {
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 15px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 17px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 17px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 15px 0px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.content {
+		width: 100%;
+	}
+	div#txt {
+		padding: 30px 10px;
+		font-size: 40px;
+		margin: 80px 0 30px;
+	}
+	.dmy {
+		font-size: 25px;
+	}
+	.city p {
+		font-size: 25px;
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 10px;
+	}
+	
+	}
+	.day h3 {
+		font-size: 33px;
+	}
+	.day p {
+		font-size: 24px;
+		line-height: 37px;
+		margin-top: 0px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 17px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 17px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 15px 0px;
+	}
+}
+
+@media screen and (max-width: 568px) {
+	.city p {
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 6px;
+	}
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 14px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 14px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 12px 0px;
+	}
+}
+
+@media screen and (max-width: 533px) {
+	.place {
+		width: 70%;
+		margin-left: 75px;
+	}
+	.city p {
+		font-size: 30px;
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 25px;
+	}
+
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 27px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 27px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 25px 0px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.place {
+		width: 75%;
+		margin-left: 55px;
+	}
+
+}
+
+@media screen and (max-width: 414px) {
+	.place {
+		width: 90%;
+		margin-left: 20px;
+	}
+	.dmy {
+		font-size: 23px;
+	}
+	.city p {
+		font-size: 25px;
+		background: rgba(0, 0, 0, 0.19) url("../images/point.png") no-repeat 15px;
+	}
+	
+    .sat {
+    	background: url("../images/sunny.png") no-repeat 18px 0px;
+	}
+    .sund {
+    	background: url("../images/cloudy.png") no-repeat 18px 0px;
+	}
+    .mon {
+    	background: url("../images/rainy.png") no-repeat 16px 0px;
+	}
+}
+
+@media screen and (max-width: 384px) {
+    h1 {
+      font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 35px;
+  }
+	.place {
+		width: 90%;
+		margin-left: 15px;
+	}
+	
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 28px;
+  }
+	.place {
+		width: 100%;
+		margin-left: 0px;
+	}
+	
+}
+
+/*-- Responsive - Code --*/
